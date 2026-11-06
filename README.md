@@ -1,41 +1,20 @@
 
-# Django Web Development – Advanced Architecture
+# Django Advanced Architecture
 
 A Django-based Course Management System demonstrating advanced Django concepts and application architecture.
 
-## Features
+## ✨ Features
 
-### 1. Class-Based Views (CBVs)
-- Course ListView
-- Course DetailView
-- Course CreateView
-- Course UpdateView
-- Course DeleteView
-- LoginRequiredMixin for authentication
-- User-specific course access control
+- 📚 Course CRUD operations using Class-Based Views (CBVs)
+- 🔐 User authentication and access control
+- ⚙️ Custom middleware for request tracking
+- 📡 Django Signals using `post_save`
+- 📊 Session-based visit tracking
+- 🍪 Cookie-based Dark and Light theme preferences
+- 🛡️ User-specific course management
+- 🚪 Session cleanup during logout
 
-### 2. Custom Middleware
-- Request and response tracking
-- User information logging
-- Session-based visit counter
-- HTTP method restrictions
-
-### 3. Django Signals
-- post_save signal on Student model
-- Automatic student registration confirmation
-- Signal registration using AppConfig.ready()
-
-### 4. Django Sessions
-- Total visit tracking
-- Previous page tracking
-- Individual page visit history
-- Session cleanup during logout
-
-### 5. Django Cookies
-- Dark and Light theme preferences
-- Persistent theme selection
-
-## Technologies Used
+## 🛠️ Technologies Used
 
 - Python
 - Django
@@ -43,55 +22,44 @@ A Django-based Course Management System demonstrating advanced Django concepts a
 - HTML
 - CSS
 
-## Installation
+## ▶️ How to Run
 
-1. Clone the repository:
+Create and activate a virtual environment:
 
-   git clone <YOUR_GITHUB_REPOSITORY_URL>
+```bash
+python -m venv venv
+```
 
-2. Navigate to the project directory:
+Install dependencies:
 
-   cd Week15_Django_Advanced
+```bash
+pip install -r requirements.txt
+```
 
-3. Create a virtual environment:
+Apply migrations:
 
-   python -m venv venv
+```bash
+python manage.py migrate
+```
 
-4. Activate the virtual environment:
+Create an administrator account:
 
-   Windows:
-   venv\Scripts\activate
+```bash
+python manage.py createsuperuser
+```
 
-5. Install dependencies:
+Start the development server:
 
-   pip install -r requirements.txt
+```bash
+python manage.py runserver
+```
 
-6. Apply migrations:
+Open in your browser:
 
-   python manage.py migrate
+```text
+http://127.0.0.1:8000/
+```
 
-7. Create an administrator account:
+## 👨‍💻 Author
 
-   python manage.py createsuperuser
-
-8. Start the development server:
-
-   python manage.py runserver
-
-9. Open your browser:
-
-   http://127.0.0.1:8000/
-
-## Project Structure
-
-config/       - Project configuration
-courses/      - Course and Student application
-manage.py     - Django management utility
-
-## Learning Objectives
-
-This project demonstrates the practical implementation of Django Class-Based Views, Middleware, Signals, Sessions, Cookies, and authentication.
-
-## Author
-
-Course Practical – Week 15
+Kaushik Prijul
