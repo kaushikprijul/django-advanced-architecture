@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Course Management</title>
+    <style>
+
+        body.dark {
+            background-color: #222;
+            color: white;
+        }
+
+        body.light {
+            background-color: white;
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body class="{% if request.COOKIES.preferred_theme == 'dark' %}dark{% else %}light{% endif %}">
+
+    <h1>Course Management System</h1>
+
+    {% if user.is_authenticated %}
+
+        <p>Welcome, {{ user.username }}</p>
+
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+
+        <hr>
+
+        <h3>Session Information</h3>
+
+        <p>
+            Welcome back, {{ user.username }}!
+        </p>
+
+        <p>
+            Total website visits: {{ visit_count }}
+        </p>
+
+        <p>
+            Previous page:
+            {{ previous_page|default:"First visit" }}
+        </p>
+
+        <h4>Page Visit History</h4>
+
+        {% for page, count in page_visits.items %}
+            <p>{{ page }} : {{ count }} visits</p>
+        {% empty %}
+            <p>No page visits recorded.</p>
+        {% endfor %}
+
+    {% else %}
+
+        <a href="{% url 'login' %}">Login</a>
+
+    {% endif %}
+
+    <h3>Choose Theme</h3>
+
+    <a href="{% url 'set_theme' 'light' %}">
+        Light Mode
+    </a>
+
+    |
+
+    <a href="{% url 'set_theme' 'dark' %}">
+        Dark Mode
+    </a>
+
+    <p>
+        Current Theme:
+        {{ request.COOKIES.preferred_theme|default:"light" }}
+    </p>
+
+    <hr>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
