@@ -1,25 +1,49 @@
 
 # Django Advanced Architecture
 
-A Django Course Management System demonstrating advanced Django concepts.
+A Django-based Course Management System demonstrating advanced Django concepts, including Class-Based Views, Middleware, Signals, Sessions, and Cookies.
 
-## Features
+## ✨ Features
 
-- Course CRUD using Class-Based Views
-- Authentication and user-specific access control
-- Custom middleware and request tracking
-- Django Signals (`post_save`)
-- Session-based visit tracking
-- Cookie-based Dark/Light theme
+- 📚 Course management using Class-Based Views (CRUD operations)
+- 🔐 User authentication and access control
+- 🛡️ User-specific course management
+- ⚙️ Custom middleware for request and response tracking
+- 📡 Automated actions using Django Signals
+- 📊 Session-based visit tracking and page history
+- 🍪 Cookie-based Dark and Light theme preferences
+- 🚪 Automatic session cleanup during logout
 
-## Tech Stack
+## 🛠️ Technologies Used
 
-Python · Django · SQLite · HTML · CSS
+- Python
+- Django
+- SQLite
+- HTML
+- CSS
 
-## Run Locally
+## ▶️ How to Run
+
+Install the required packages:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Apply migrations:
+
+```bash
 python manage.py migrate
+```
+
+Create an administrator account:
+
+```bash
+python manage.py createsuperuser
+```
+
+Start the development server:
+
+```bash
 python manage.py runserver
 ```
